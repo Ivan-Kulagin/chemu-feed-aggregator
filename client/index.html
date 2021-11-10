@@ -40,8 +40,8 @@
                 <div class="card-header">
                     <span class="text-secondary fw-bold"> {{ item.hostname }} </span>
                 </div>
-                <img v-if="true" :src="item.image" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
-                <img v-else src="assets/1200x150.png" class="card-img-top" alt="Image" style="width: 100%">
+                <img v-if="item.image" :src="item.image" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
+                <img v-else :src="item.image2" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
                 <div class="card-body">
                     <h5 class="card-title">{{ item.title }}</h5>
                     <p class="card-text">{{ item.description }}</p>
@@ -56,8 +56,8 @@
                 <div class="card-header" v-if="item.hostname">
                     <span class="text-secondary fw-bold"> {{ item.hostname }} </span>
                 </div>
-                <img v-if="true" :src="item.image" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
-                <img v-else src="assets/1200x150.png" class="card-img-top" alt="Image" style="width: 100%">
+                <img v-if="item.image" :src="item.image" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
+                <img v-else :src="item.image2" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
                 <div class="card-body">
                     <h5 class="card-title">{{ item.title }}</h5>
                     <p class="card-text">{{ item.description }}</p>
