@@ -18,7 +18,6 @@ chemistry.add({
         'https://phys.org/rss-feed/chemistry-news/biochemistry/',
         'https://www.nytimes.com/svc/collections/v1/publish/http://www.nytimes.com/topic/subject/chemistry/rss.xml',
         'https://economictimes.indiatimes.com/industry/healthcare/biotech/rssfeeds/13358050.cms',
-        'https://www.pharmatimes.com/rss/news_rss.rss',
         'https://www.news-medical.net/tag/feed/Biochemistry.aspx',
         'https://pubsapp.acs.org/cen/rss/latestnews.xml',
         'https://www.sciencedaily.com/rss/matter_energy/chemistry.xml',
@@ -37,6 +36,7 @@ pharmacology.add({
         'https://www.sciencedaily.com/rss/health_medicine/pharmacology.xml',
         'https://www.sciencedaily.com/rss/health_medicine/pharmaceuticals.xml',
         'https://economictimes.indiatimes.com/prime/pharma-and-healthcare/rssfeeds/60187434.cms',
+        'https://www.pharmatimes.com/rss/news_rss.rss',
         'https://www.news-medical.net/tag/feed/Pharmacy.aspx',
         'https://www.news-medical.net/tag/feed/Pharmaceuticals.aspx',
         'http://feeds.feedburner.com/DrugTargetReview?format=xml',
@@ -59,7 +59,7 @@ hostnames = {
     'www.drugtargetreview.com': ['Drug Target Review', false],
     'economictimes.indiatimes.com': ['The Economic Times', false],
     'www.pharmatimes.com': ['PharmaTimes', '.section-content.standard'],
-    'www.news-medical.net': ['News Medical', '.content']
+    'www.news-medical.net': ['News Medical', '.contentImage']
 }
 
 async function itemFixer(item) {
@@ -100,7 +100,7 @@ async function scrapeImage(url, domEl) {
         }
 
     } catch (err) {
-        console.error(err);
+        // console.error(err);
     }
 }
 

@@ -10,12 +10,12 @@
     <title>RSS Reader - ChemU</title>
 </head>
 <body style="
-  background: #485563;
-  background: -webkit-linear-gradient(to right, #485563, #29323c);
-  background: linear-gradient(to right, #485563, #29323c);
+  background: #7474BF;
+  background: -webkit-linear-gradient(to right, #7474BF, #348AC7);
+  background: linear-gradient(to right, #7474BF, #348AC7);
   ">
 
-    <div style="background-color: rgb(31, 41, 55);  width: 100%">
+    <div style="background-color: rgba(31, 41, 55, 0.85);  width: 100%">
         <a href="https://chemu.de/"><img src="assets/logo.png" style="max-width: 240px; max-height: 120px;"></a>
     </div>
     <div class="container pt-3" id="app">
@@ -36,7 +36,7 @@
         </div>
 
         <div v-else-if="activeButton === 'chemistry' && feed.CHEM_LIST !== undefined && feed.CHEM_LIST.length">
-            <div class="card mb-3 bg-light" v-for="item in chem_list" v-if="item.description !== null">
+            <div class="card mb-2 bg-light" v-for="item in chem_list" v-if="item.description !== null">
                 <div class="card-header">
                     <span class="text-secondary fw-bold"> {{ item.hostname }} </span>
                 </div>
@@ -52,7 +52,7 @@
         </div>
 
         <div v-else-if="activeButton === 'pharma' && feed.PHARMA_LIST !== undefined && feed.PHARMA_LIST.length">
-            <div class="card mb-3 bg-light" v-for="item in pharma_list" v-if="item.description !== null">
+            <div class="card mb-2 bg-light" v-for="item in pharma_list" v-if="item.description !== null">
                 <div class="card-header" v-if="item.hostname">
                     <span class="text-secondary fw-bold"> {{ item.hostname }} </span>
                 </div>
@@ -70,6 +70,6 @@
         <p v-else>Feed List is empty</p>
     </div>
 
-<script type="module" src="frontend.js"></script>
+    <script type="module" src="frontend.js"></script>
 </body>
 </html>
