@@ -22,6 +22,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'client', 'index.html'))
 })
 
-app.listen(8080, () =>
-    console.log('Server has been started on port 8080...'))
+app.listen(3000, () =>
+    console.log('Server has been started on port 3000...'))
 
