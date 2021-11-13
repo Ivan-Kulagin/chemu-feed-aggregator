@@ -69,10 +69,14 @@ async function itemFixer(item) {
     let scrapeLink = item.link
     let imageSrc = await scrapeImage(scrapeLink, hostnames[hostname][1])
     let imageSrcRsv = '/assets/logo/' + hostnames[hostname][0] + '.png'
+    let rawDate = item.date
+    let stringDate = rawDate.toString()
+    let newDate = stringDate.slice(0, stringDate.search(/ \(/))
 
 
     if (rawDescription !== null) {
         cleanDescription = rawDescription.replace(/<\/?[^>]+(>|$)/g, "");
+        if (!cleanDescription.length) cleanDescription = "Read the full article at "+hostnames[hostname][0]
         if (cleanDescription.length > 1023) cleanDescription = cleanDescription.substring(0, 1020) + '...'
     }
 
@@ -83,7 +87,7 @@ async function itemFixer(item) {
         description: cleanDescription,
         image: imageSrc,
         image2: imageSrcRsv,
-        date: item.date.toString(),
+        date: newDate,
         link: item.link,
         hostname: hostnames[hostname][0]
     }

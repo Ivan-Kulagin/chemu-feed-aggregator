@@ -31,7 +31,7 @@ new Vue({
             this.pharma_list = this.pharma_list.slice(0, 5 + this.loadMore)
         },
         handleScroll() {
-            if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 65) {
+            if (window.scrollY + window.innerHeight >= document.body.scrollHeight - 100) {
                 this.loadMore += 5;
                 if (this.activeButton === 'chemistry') {
                     this.chem_list = [
@@ -44,7 +44,7 @@ new Vue({
                     ]
                 }
             }
-        }
+        },
     },
     async mounted() {
         this.loading = true

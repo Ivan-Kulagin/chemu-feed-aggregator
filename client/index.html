@@ -35,41 +35,41 @@
             <loader />
         </div>
 
-        <div v-else-if="activeButton === 'chemistry' && feed.CHEM_LIST !== undefined && feed.CHEM_LIST.length">
+        <div v-else-if="activeButton === 'chemistry' && feed.CHEM_LIST !== undefined && feed.CHEM_LIST.length" v-cloak>
             <div class="card mb-2 bg-light" v-for="item in chem_list" v-if="item.description !== null">
                 <div class="card-header">
                     <span class="text-secondary fw-bold"> {{ item.hostname }} </span>
                 </div>
-                <img v-if="item.image" :src="item.image" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
-                <img v-else :src="item.image2" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
+                <img v-if="item.image" :src="item.image" class="card-img-top p-3 justify-content-center m-auto img-fluid" alt="Image" style="max-height: 500px; width: auto">
+                <img v-else :src="item.image2" class="card-img-top p-3 justify-content-center m-auto img-fluid" alt="Image" style="max-height: 150px; width: auto">
                 <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="card-text">{{ item.description }}</p>
+                    <h5 class="card-title" v-html="item.title"></h5>
+                    <p class="card-text" v-html="item.description"></p>
                     <a class="btn btn-outline-primary" :href="item.link">Read the full article</a>
                 </div>
                 <div class="card-footer text-muted">{{ item.date }}</div>
             </div>
         </div>
 
-        <div v-else-if="activeButton === 'pharma' && feed.PHARMA_LIST !== undefined && feed.PHARMA_LIST.length">
+        <div v-else-if="activeButton === 'pharma' && feed.PHARMA_LIST !== undefined && feed.PHARMA_LIST.length" v-cloak>
             <div class="card mb-2 bg-light" v-for="item in pharma_list" v-if="item.description !== null">
                 <div class="card-header" v-if="item.hostname">
                     <span class="text-secondary fw-bold"> {{ item.hostname }} </span>
                 </div>
-                <img v-if="item.image" :src="item.image" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
-                <img v-else :src="item.image2" class="card-img-top p-3 justify-content-center m-auto" alt="Image" style="width: 40%">
+                <img v-if="item.image" :src="item.image" class="card-img-top p-3 justify-content-center m-auto img-fluid" alt="Image" style="max-height: 500px; width: auto">
+                <img v-else :src="item.image2" class="card-img-top p-3 justify-content-center m-auto img-fluid" alt="Image" style="max-height: 150px; width: auto">
                 <div class="card-body">
-                    <h5 class="card-title">{{ item.title }}</h5>
-                    <p class="card-text">{{ item.description }}</p>
+                    <h5 class="card-title" v-html="item.title"></h5>
+                    <p class="card-text" v-html="item.description"></p>
                     <a class="btn btn-outline-primary" :href="item.link">Read the full article</a>
                 </div>
                 <div class="card-footer text-muted">{{ item.date }}</div>
             </div>
         </div>
 
-        <p v-else>Feed List is empty</p>
+        <p v-else v-cloak>Feed List is empty</p>
     </div>
-
+    <style>[v-cloak] { display: none; }</style>
     <script type="module" src="frontend.js"></script>
 </body>
 </html>
